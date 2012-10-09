@@ -1,0 +1,29 @@
+%h1 Projekte
+
+=form_for @project do |f|
+
+  = f.text_field :name
+  = f.text_field :description
+  %button.btn.button neues Projekt anlegen
+
+%table.table.table-hover
+  %thead
+    %tr
+      %th ID
+      %th Name
+      %th Beschreibung
+      %th Updated at
+      %th Aktionen
+
+  -@projects.each do |p|
+    %tbody
+      %tr
+        %td= p.id
+        %td= p.name
+        %td= p.description
+        %td= p.updated_at
+        %td 
+          =link_to p, :method => :delete, :class => "btn btn-small button" do
+            %i.icon-trash löschen
+
+
