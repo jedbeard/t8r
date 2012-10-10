@@ -25,7 +25,6 @@ gem 'haml'
 gem 'bootstrap'
 gem 'bootstrap-sass'
 gem 'twitter-bootstrap-rails'
-gem 'rspec-rails'
 
 group :development, :unstable, :test do
   gem "capybara-webkit", "~> 0.11.0"
@@ -33,6 +32,7 @@ group :development, :unstable, :test do
 end
 
 group :test do
+  gem 'rspec-rails'
   gem "mocha", "0.11.4"
   gem "webmock", "~> 1.8.6"
   gem "factory_girl", "~> 1.3.0"
