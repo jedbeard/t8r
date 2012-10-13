@@ -6,6 +6,6 @@ class TranslationsController < ApplicationController
     t.translation = params[:translation][:translation]
     t.project_id = params[:translation][:project_id]
     t.save
-    redirect_to projects_path
+    redirect_to project_path(t.project_id)
   end
 end

@@ -13,7 +13,12 @@ describe ProjectsController do
       end
 
       it "after create" do
-        { :post => "projects", "project" => { "name" => "ger", "description" => "ger" } }.should route_to(
+        { :post => "projects",
+          :project => {
+            :name => "ger",
+            :description => "ger"
+          }
+        }.should route_to(
           :controller => "projects",
           :action => "create"
         )
