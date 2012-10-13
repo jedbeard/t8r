@@ -1,0 +1,25 @@
+%h1= @project.name
+
+=form_for @translation do |f|
+  = f.text_field :key
+  = f.text_field :translation
+  %button#add_project.btn.button neue Übersetzung anlegen
+  = f.text_field :project_id, :value => @project.id, :class => "hidden"
+
+  %table.table.table-hover
+    %thead
+      %tr
+        %th ID
+        %th Sprache
+        %th Key
+        %th Überstzung
+        %th Aktionen
+
+    -@project.translations.each do |t|
+      %tbody
+        %tr
+          %td= t.id
+          %td= t.language
+          %td= t.key
+          %td= t.translation
+  

@@ -4,6 +4,11 @@ class ProjectsController < ApplicationController
     @project = Project.new
   end
 
+  def show
+    @project = Project.find(params[:id])
+    @translation = Translation.new
+  end
+
   def create
     Project.new(params["project"]).save
     redirect_to projects_path
