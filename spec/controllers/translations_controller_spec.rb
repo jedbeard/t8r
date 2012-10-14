@@ -17,6 +17,12 @@ describe TranslationsController do
       )
     end
 
+    it "to destroy" do
+      { :delete => "translations/1" }.should route_to(
+        :controller => "translations",
+        :action => "destroy",
+        :id => "1")
+    end
   end
 
 end
