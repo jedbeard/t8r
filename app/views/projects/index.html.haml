@@ -4,7 +4,7 @@
 
   = f.text_field :name
   = f.text_field :description
-  %button#add_project.btn.button neues Projekt anlegen
+  %button#add_project.btn.button-upper neues Projekt anlegen
 
 %table.table.table-hover
   %thead
@@ -22,12 +22,8 @@
         %td= p.name
         %td= p.description
         %td= p.updated_at
-        %td 
-          =link_to p, :id => "delete_project", :class => "btn btn-small button", :title => "Projekt löschen", "data-placement" => "top", :rel => "tooltip", "data-method" => "delete" do
-            %i.icon-trash
-          /=link_to p, :method => :delete, :class => "btn btn-small button" do
-          /  %i.icon-edit
-          =link_to p, :id => "show_project", :class => "btn btn-small button", :title => "Projekt öffnen", "data-placement" => "top", :rel => "tooltip" do
-            %i.icon-eye-open
+        %td
+          = render "partials/delete_link", :id => "delete_project", :title => "Projekt löschen", :obj => p
+          = render "partials/show_link", :id => "show_project", :title => "Projekt öffnen", :obj => p
 
 

@@ -1,18 +1,20 @@
 %h1= @project.name
 
 =form_for @translation do |f|
-  = f.text_field :key
-  = f.text_field :translation
-  %button#add_project.btn.button neue Übersetzung anlegen
+  = f.text_field :key, :placeholder => "Key"
+  = f.text_field :to_translate, :placeholder => "zu übersetzender Text"
+  = f.text_field :translation, :placeholder => "Übersetzung"
+  %button#add_project.btn.button-upper neue Übersetzung anlegen
   = f.text_field :project_id, :value => @project.id, :class => "hidden"
 
-  %table.table.table-hover
+  %table.default-table
     %thead
       %tr
         %th ID
         %th Sprache
         %th Key
-        %th Überstzung
+        %th zu übersetzender Text
+        %th Übersetzung
         %th Aktionen
 
     -@project.translations.each do |t|
@@ -21,5 +23,7 @@
           %td= t.id
           %td= t.language
           %td= t.key
+          %td= t.to_translate
           %td= t.translation
+          %td.actions= render "partials/delete_link", :id => "delete_translation", :title => "Übersetzung löschen", :obj => t
   
