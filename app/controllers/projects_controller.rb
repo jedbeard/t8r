@@ -7,6 +7,11 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     @translation = Translation.new
+    respond_to do |format|
+      format.html # show.html.hml
+      format.xml  { render :xml => @project }
+      format.json { render :json => @project }
+    end
   end
 
   def create
