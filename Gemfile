@@ -32,6 +32,7 @@ group :development, :unstable, :test do
 end
 
 group :test do
+  gem 'cover_me', '>= 1.2.0'
   gem 'rspec-rails'
   gem "mocha", "0.11.4"
   gem "webmock", "~> 1.8.6"
