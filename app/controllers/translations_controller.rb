@@ -1,4 +1,5 @@
 class TranslationsController < ApplicationController
+
   def create
     t = Translation.new()
     t.language = "Deutsch"
@@ -9,7 +10,7 @@ class TranslationsController < ApplicationController
     t.save
     redirect_to project_path(t.project_id)
   end
-
+  
   def destroy
     t = Translation.find(params[:id])
     Translation.delete(t.id)
