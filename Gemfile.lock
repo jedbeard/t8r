@@ -1,9 +1,3 @@
-GIT
-  remote: git://github.com/thomas-mcdonald/bootstrap-sass.git
-  revision: dabed1ecbc10fd79f18e48e579db7336e782d676
-  specs:
-    bootstrap-sass (2.1.0.1)
-
 GEM
   remote: https://rubygems.org/
   specs:
@@ -39,6 +33,7 @@ GEM
     arel (3.0.2)
     autotest (4.4.6)
       ZenTest (>= 4.4.1)
+    bootstrap-sass (2.1.0.0)
     builder (3.0.3)
     capybara (1.1.2)
       mime-types (>= 1.16)
@@ -176,7 +171,7 @@ PLATFORMS
 
 DEPENDENCIES
   autotest (~> 4.4.6)
-  bootstrap-sass!
+  bootstrap-sass
   capybara-webkit (~> 0.11.0)
   coffee-rails (~> 3.2.1)
   cover_me (>= 1.2.0)

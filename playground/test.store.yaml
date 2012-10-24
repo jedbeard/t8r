@@ -1,0 +1,16 @@
+---
+people:
+  description: Alle englischen BlauWorld Übersetzungen
+  name: Blau World
+  translations:
+  - key: translations.key
+    language: Deutsch
+    to_translate: zu übersetzender Text mit mehr Text um den Zeilenumbruch zu testen
+    translation: ''
+  - key: translations.bla
+    language: Deutsch
+    to_translate: Dieser Text ist auch länger und hat auch eine Überstzung mal schauen
+    translation: länger, damit man mal sehen kann was wird :)
+greeting:
+  for:
+    hello: world

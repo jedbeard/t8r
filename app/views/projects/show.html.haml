@@ -7,7 +7,7 @@
   %button#add_project.btn.button-upper neue Übersetzung anlegen
   = f.text_field :project_id, :value => @project.id, :class => "hidden"
 
-  %table.default-table
+  %table
     %thead
       %tr
         %th ID
@@ -17,13 +17,13 @@
         %th Übersetzung
         %th Aktionen
 
+    %tbody
     -@project.translations.each do |t|
-      %tbody
-        %tr
-          %td= t.id
-          %td= t.language
-          %td= t.key
-          %td= t.to_translate
-          %td= t.translation
-          %td.actions= render "partials/delete_link", :id => "delete_translation", :title => "Übersetzung löschen", :obj => t
+      %tr
+        %td= t.id
+        %td= t.language
+        %td= t.key
+        %td= t.to_translate
+        %td= t.translation
+        %td.actions= render "partials/delete_link", :id => "delete_translation", :title => "Übersetzung löschen", :obj => t
   
